@@ -151,4 +151,4 @@ class StripeOnBoardingController extends Controller
         }
     }
 
-}
+} 
