@@ -15,7 +15,7 @@ class NotificationController extends Controller
     public function test(){
 
         $user = auth('api')->user();
-        $admin = User::role('admin', 'web')->first();
+        $admin = User::role('admin','web')->first();
 
         $notiData = [
             'user_id' => $user->id,

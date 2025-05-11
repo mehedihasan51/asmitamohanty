@@ -34,7 +34,7 @@ class StripeOnBoardingController extends Controller
                     'payouts' => [
                         'schedule' => [
                             'interval' => 'daily', // daily, weekly, monthly
-                        ],
+                        ], 
                     ],
                 ],
             ]);
