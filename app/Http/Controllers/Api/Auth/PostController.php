@@ -37,6 +37,7 @@ class PostController extends Controller
             'content'           => 'required'
         ]);
 
+
         if ($validator->fails()) {
             return Helper::jsonResponse(false, 'Validation failed', 422, $validator->errors());
         }
@@ -47,6 +48,7 @@ class PostController extends Controller
 
             $post = new Post();
             $post->user_id = auth('api')->user()->id;
+
 
             // Handle the thumbnail upload
             if ($request->hasFile('image')) {

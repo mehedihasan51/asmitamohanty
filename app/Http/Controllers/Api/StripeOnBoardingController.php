@@ -16,7 +16,7 @@ use Stripe\Balance;
 
 class StripeOnBoardingController extends Controller
 {
-     
+    
     public function accountConnect()
     {
         $user = auth('api')->user();
@@ -151,4 +151,4 @@ class StripeOnBoardingController extends Controller
         }
     }
 
-} 
+}

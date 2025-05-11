@@ -23,7 +23,7 @@ class ProductController extends Controller
     }
 
     public function store(Request $request)
-    {
+    { 
         $validator = Validator::make($request->all(), [
             'title'             => 'required|string|max:255',
             'thumb'             => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:20480',
