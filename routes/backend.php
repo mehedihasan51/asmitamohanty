@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\Backend\TransactionController;
 use App\Http\Controllers\Web\Backend\CategoryController;
 use App\Http\Controllers\Web\Backend\ChatController;
 use App\Http\Controllers\Web\Backend\ClothForController;
+use App\Http\Controllers\Web\Backend\CMS\Web\About\AboutBannerController;
 use App\Http\Controllers\Web\Backend\CMS\Web\AuthPageController;
 use App\Http\Controllers\Web\Backend\CMS\Web\Home\HomeBannerController;
 use App\Http\Controllers\Web\Backend\CMS\Web\Home\HomeHeroController;
@@ -273,6 +274,19 @@ Route::prefix('cms')->name('cms.')->group(function () {
     });
 
     Route::prefix('home/banner')->name('home.banner.')->controller(HomeBannerController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/{id}', 'show')->name('show');
+        Route::get('/{id}/edit', 'edit')->name('edit');
+        Route::patch('/{id}', 'update')->name('update');
+        Route::delete('/{id}', 'destroy')->name('destroy');
+        Route::get('/{id}/status', 'status')->name('status');
+
+        Route::put('/content', 'content')->name('content');
+    });
+
+    Route::prefix('about/banner')->name('about.banner.')->controller(AboutBannerController::class)->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/', 'store')->name('store');

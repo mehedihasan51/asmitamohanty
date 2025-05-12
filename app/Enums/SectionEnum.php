@@ -8,6 +8,9 @@ enum SectionEnum: string
 
     case HOME_BANNER = 'home_banner';
     case HOME_BANNERS = 'home_banners';
+
+    case ABOUT_BANNER = 'about_banner';
+    case ABOUT_BANNERS = 'about_banners';
     case HERO = 'hero';
 
     case TERM='term';

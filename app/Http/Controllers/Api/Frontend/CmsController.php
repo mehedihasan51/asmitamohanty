@@ -25,4 +25,21 @@ class CmsController extends Controller
         ];
         return Helper::jsonResponse(true, 'Home Page', 200, $data);
     }
+    public function home()
+    {
+        $data = [
+            'homes' => CMS::select(['title', 'description','image'])->where('page', PageEnum::HOME)->where('section', SectionEnum::HOME_BANNER)->where('status', 'active')->get()
+        ];
+        return Helper::jsonResponse(true, 'Home Page', 200, $data);
+    }
+    public function about()
+    {
+        $data = [
+            'abouts' => CMS::select(['title', 'description','image'])->where('page', PageEnum::ABOUT)->where('section', SectionEnum::ABOUT_BANNER)->where('status', 'active')->get()
+        ];
+        return Helper::jsonResponse(true, 'About Page', 200, $data);
+    }
+
+
+
 }

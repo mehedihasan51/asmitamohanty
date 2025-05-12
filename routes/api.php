@@ -126,6 +126,8 @@ Route::controller(PostController::class)->prefix('post')->group(function () {
 Route::controller(CmsController::class)->prefix('cms/')->group(function () {
     Route::get('terms', 'term');
     Route::get('privacies', 'privacy');
+    Route::get('homes', 'home');
+    Route::get('abouts', 'about');
 });
 
 //chat
