@@ -37,9 +37,11 @@ Route::group(['middleware' => 'guest:api'], function ($router) {
     Route::post('/social-login', [SocialLoginController::class, 'SocialLogin']);
 
     //page
-    Route::get('/page/home', [HomeController::class, 'index']);
+//    Route::get('/page/home', [HomeController::class, 'index']);
    
 });
+
+    Route::get('/page/home', [HomeController::class, 'index']);
 
 Route::group(['middleware' => ['auth:api', 'otp']], function () {
     Route::get('/refresh-token', [LoginController::class, 'refreshToken']);
